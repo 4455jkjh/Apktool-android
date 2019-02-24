@@ -30,6 +30,7 @@ import org.jf.dexlib2.iface.ClassDef;
 import org.jf.dexlib2.writer.builder.DexBuilder;
 import org.jf.dexlib2.writer.io.FileDataStore;
 import org.jf.dexlib2.writer.pool.DexPool;
+import brut.androlib.MessageUtil;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -79,7 +80,7 @@ public class SmaliBuilder {
                 throw new AndrolibException(ex);
             }
         } else {
-            LOGGER.warning("Unknown file type, ignoring: " + inFile);
+            MessageUtil.warning(LOGGER, MessageUtil.UNKNOWN_TYPE, inFile);
         }
         inStream.close();
     }

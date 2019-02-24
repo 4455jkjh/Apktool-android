@@ -357,7 +357,7 @@ public class Androlib {
     public void buildSources(File appDir)
 	throws AndrolibException {
         if (!buildSourcesRaw(appDir, "classes.dex") && !buildSourcesSmali(appDir, "smali", "classes.dex")) {
-            LOGGER.warning("Could not find sources");
+            MessageUtil.warning(LOGGER, MessageUtil.COULD_NOT_FIND_SOURCE);
         }
     }
 
@@ -372,7 +372,7 @@ public class Androlib {
                     String filename = name.substring(name.indexOf("_") + 1) + ".dex";
 
                     if (!buildSourcesRaw(appDir, filename) && !buildSourcesSmali(appDir, name, filename)) {
-                        LOGGER.warning("Could not find sources");
+                        MessageUtil.warning(LOGGER, MessageUtil.COULD_NOT_FIND_SOURCE);
                     }
                 }
             }
@@ -434,7 +434,7 @@ public class Androlib {
 	throws BrutException {
         if (!buildResourcesRaw(appDir) && !buildResourcesFull(appDir, usesFramework)
 			&& !buildManifest(appDir, usesFramework)) {
-            LOGGER.warning("Could not find resources");
+            MessageUtil.warning(LOGGER, MessageUtil.COULD_NOT_FIND_RESOURCE);
         }
     }
 
@@ -560,7 +560,7 @@ public class Androlib {
         } catch (IOException | DirectoryException ex) {
             throw new AndrolibException(ex);
         } catch (AndrolibException ex) {
-            LOGGER.warning("Parse AndroidManifest.xml failed, treat it as raw file.");
+            MessageUtil.warning(LOGGER, MessageUtil.PATSE_MANIFEST_FAILED);
             return buildManifestRaw(appDir);
         }
     }

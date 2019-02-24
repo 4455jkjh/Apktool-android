@@ -47,7 +47,28 @@ public class Messages extends ListResourceBundle {
 
 		{MessageUtil.SEVERE1,                             "WARNING: Could not write to ({0}), using {1} instead..."},
 		{MessageUtil.SEVERE2,                             "Please be aware this is a volatile directory and frameworks could go missing, please utilize --frame-path if the default storage directory is unavailable"},
-		{MessageUtil.SEVERE3,                             "Can't create Framework directory: {0}"}
+		{MessageUtil.SEVERE3,                             "Can't create Framework directory: {0}"},
+		{MessageUtil.COULD_NOT_FIND_SOURCE,               "Could not find sources"},
+		{MessageUtil.COULD_NOT_FIND_RESOURCE,             "Could not find resources"},
+		{MessageUtil.PATSE_MANIFEST_FAILED,               "Parse AndroidManifest.xml failed, treat it as raw file."},
+		{MessageUtil.SKIP_PACKAGE_GROUP,                  "Skipping {0} package group"},
+		{MessageUtil.SET_DEFAULT_AAPT,                    "aapt: {0} (defaulting to $PATH binary)"},
+		{MessageUtil.EMPTY_FRAME_FAILED,                  "Can't empty framework directory, no file found at: {0}"},
+		{MessageUtil.MORE_THAN_ONE_FRAME,                 "More than default framework detected. Please run command with `--force` parameter to wipe framework directory."},
+		{MessageUtil.INVALID_ORIENTATION,                 "Invalid orientation value: {0}"},
+		{MessageUtil.INVALID_DENSITY,                     "Invalid density value: {0}"},
+		{MessageUtil.INVALID_KEYBOARD,                    "Invalid keyboard value: {0}"},
+		{MessageUtil.INVALID_NAVIGATION,                  "Invalid navigation value: {0}"},
+		{MessageUtil.INVALID_TOUCHSCREEN,                 "Invalid touchscreen value: {0}"},
+		{MessageUtil.MULTIPLE_TYPE,                       "Multiple types detected! {0} ignored!"},
+		{MessageUtil.REPORT_FIX,                          "Please report this application to Apktool for a fix: https://github.com/iBotPeaches/Apktool/issues/1728"},
+		{MessageUtil.DECTED_UNKNOWN_DATA,                 "Unknown data detected. Skipping: {0} byte(s)"},
+		{MessageUtil.DECTED_INVALID_DATA,                 "Invalid data detected. Skipping: {0} byte(s)"},
+		{MessageUtil.INVALID_CONFIG_DROP,                 "Invalid config flags detected. Dropping resources: {0}"},
+		{MessageUtil.INVALID_CONFIG,                      "Invalid config flags detected: {0}"},
+		{MessageUtil.DUPLICATE_RESOURCES,                 "Duplicate Resource Detected. Ignoring duplicate: {0}"},
+		{MessageUtil.JAXP_1_5_NOT_SUPPORT,                "JAXP 1.5 Support is required to validate XML"},
+		{MessageUtil.UNKNOWN_TYPE,                        "Unknown file type, ignoring: {0}"}
 	};
 
 	@Override

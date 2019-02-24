@@ -24,6 +24,7 @@ import brut.androlib.res.xml.ResValuesXmlSerializable;
 import brut.util.Duo;
 import java.util.*;
 import java.util.logging.Logger;
+import brut.androlib.MessageUtil;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -172,7 +173,7 @@ public class ResPackage {
 
     public void addType(ResTypeSpec type) throws AndrolibException {
         if (mTypes.containsKey(type.getName())) {
-            LOGGER.warning("Multiple types detected! " + type + " ignored!");
+            MessageUtil.warning(LOGGER, MessageUtil.MULTIPLE_TYPE, type);
         } else {
             mTypes.put(type.getName(), type);
         }

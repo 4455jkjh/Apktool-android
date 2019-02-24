@@ -114,7 +114,7 @@ public class ARSCDecoder {
         }
 
         if (mTypeIdOffset > 0) {
-            LOGGER.warning("Please report this application to Apktool for a fix: https://github.com/iBotPeaches/Apktool/issues/1728");
+            MessageUtil.warning(LOGGER, MessageUtil.REPORT_FIX);
         }
 
         mTypeNames = StringBlock.read(mIn);
@@ -177,7 +177,7 @@ public class ARSCDecoder {
 
             // skip "TYPE 8 chunks" and/or padding data at the end of this chunk
             if (mCountIn.getCount() < mHeader.endPosition) {
-                LOGGER.warning("Unknown data detected. Skipping: " + (mHeader.endPosition - mCountIn.getCount()) + " byte(s)");
+                MessageUtil.warning(LOGGER, MessageUtil.DECTED_UNKNOWN_DATA,  mHeader.endPosition - mCountIn.getCount());
                 mCountIn.skip(mHeader.endPosition - mCountIn.getCount());
             }
 
@@ -224,7 +224,7 @@ public class ARSCDecoder {
         // For some APKs there is a disconnect between the reported size of Configs
         // If we find a mismatch skip those bytes.
         if (position != mCountIn.getCount()) {
-            LOGGER.warning("Invalid data detected. Skipping: " + (position - mCountIn.getCount()) + " byte(s)");
+            MessageUtil.warning(LOGGER, MessageUtil.DECTED_INVALID_DATA, position - mCountIn.getCount());
             mIn.skipBytes(position - mCountIn.getCount());
         }
 
@@ -236,9 +236,9 @@ public class ARSCDecoder {
         if (flags.isInvalid) {
             String resName = mTypeSpec.getName() + flags.getQualifiers();
             if (mKeepBroken) {
-                LOGGER.warning("Invalid config flags detected: " + resName);
+                MessageUtil.warning(LOGGER, MessageUtil.INVALID_CONFIG,  resName);
             } else {
-                LOGGER.warning("Invalid config flags detected. Dropping resources: " + resName);
+                MessageUtil.warning(LOGGER, MessageUtil.INVALID_CONFIG_DROP, resName);
             }
         }
 
@@ -319,7 +319,7 @@ public class ARSCDecoder {
             if (mKeepBroken) {
                 mType.addResource(res, true);
                 spec.addResource(res, true);
-                LOGGER.warning(String.format("Duplicate Resource Detected. Ignoring duplicate: %s", res.toString()));
+                MessageUtil.warning(LOGGER, MessageUtil.DUPLICATE_RESOURCES, res.toString());
             } else {
                 throw ex;
             }

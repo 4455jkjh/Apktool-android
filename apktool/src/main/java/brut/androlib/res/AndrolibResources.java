@@ -75,6 +75,7 @@ import java.util.zip.ZipOutputStream;
 import org.apache.commons.io.IOUtils;
 import org.xmlpull.v1.XmlSerializer;
 import brut.androlib.MessageUtil;
+import org.jf.dexlib2.iface.Method;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -105,11 +106,11 @@ final public class AndrolibResources {
                 break;
             case 2:
                 if (pkgs[0].getName().equals("android")) {
-                    LOGGER.warning("Skipping \"android\" package group");
+                    MessageUtil.warning(LOGGER, MessageUtil.SKIP_PACKAGE_GROUP, "\"android\"");
                     pkg = pkgs[1];
                     break;
                 } else if (pkgs[0].getName().equals("com.htc")) {
-                    LOGGER.warning("Skipping \"htc\" package group");
+                    MessageUtil.warning(LOGGER, MessageUtil.SKIP_PACKAGE_GROUP, "\"htc\"");
                     pkg = pkgs[1];
                     break;
                 }
@@ -625,7 +626,7 @@ final public class AndrolibResources {
             String aaptCommand = AaptManager.getAaptExecutionCommand(aaptPath, getAaptBinaryFile());
             cmd.add(aaptCommand);
         } catch (BrutException ex) {
-            LOGGER.warning("aapt: " + ex.getMessage() + " (defaulting to $PATH binary)");
+            MessageUtil.warning(LOGGER, MessageUtil.SET_DEFAULT_AAPT, ex.getMessage());
             cmd.add(AaptManager.getAaptBinaryName(getAaptVersion()));
         }
 
@@ -828,11 +829,11 @@ final public class AndrolibResources {
         apk = new File(dir, "1.apk");
 
         if (! apk.exists()) {
-            LOGGER.warning("Can't empty framework directory, no file found at: " + apk.getAbsolutePath());
+            MessageUtil.warning(LOGGER, MessageUtil.EMPTY_FRAME_FAILED, apk.getAbsolutePath());
         } else {
             try {
                 if (apk.exists() && dir.listFiles().length > 1 && ! apkOptions.forceDeleteFramework) {
-                    LOGGER.warning("More than default framework detected. Please run command with `--force` parameter to wipe framework directory.");
+                    MessageUtil.warning(LOGGER, MessageUtil.MORE_THAN_ONE_FRAME);
                 } else {
                     for (File file : dir.listFiles()) {
                         String name = file.getName();

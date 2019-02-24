@@ -17,6 +17,7 @@
 package brut.androlib.res.data;
 
 import java.util.logging.Logger;
+import brut.androlib.MessageUtil;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -97,27 +98,27 @@ public class ResConfigFlags {
                           short screenHeightDp, char[] localeScript, char[] localeVariant,
                           byte screenLayout2, byte colorMode, boolean isInvalid, int size) {
         if (orientation < 0 || orientation > 3) {
-            LOGGER.warning("Invalid orientation value: " + orientation);
+            MessageUtil.warning(LOGGER, MessageUtil.INVALID_ORIENTATION, orientation);
             orientation = 0;
             isInvalid = true;
         }
         if (touchscreen < 0 || touchscreen > 3) {
-            LOGGER.warning("Invalid touchscreen value: " + touchscreen);
+            MessageUtil.warning(LOGGER, MessageUtil.INVALID_TOUCHSCREEN, touchscreen);
             touchscreen = 0;
             isInvalid = true;
         }
         if (density < -1) {
-            LOGGER.warning("Invalid density value: " + density);
+            MessageUtil.warning(LOGGER, MessageUtil.INVALID_DENSITY, density);
             density = 0;
             isInvalid = true;
         }
         if (keyboard < 0 || keyboard > 3) {
-            LOGGER.warning("Invalid keyboard value: " + keyboard);
+            MessageUtil.warning(LOGGER, MessageUtil.INVALID_KEYBOARD, keyboard);
             keyboard = 0;
             isInvalid = true;
         }
         if (navigation < 0 || navigation > 4) {
-            LOGGER.warning("Invalid navigation value: " + navigation);
+            MessageUtil.warning(LOGGER, MessageUtil.INVALID_NAVIGATION, navigation);
             navigation = 0;
             isInvalid = true;
         }

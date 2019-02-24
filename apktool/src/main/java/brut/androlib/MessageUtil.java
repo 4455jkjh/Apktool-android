@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class MessageUtil {
 	private static final ResourceBundle rb;
-	
+
 	public static final String ANDROLIB_COPY_RAW_FILE            = "1";
 	public static final String ANDROLIB_BAKSMALI                 = "2";
 	public static final String ANDROLIB_COPY_RAW_MANIFEST        = "3";
@@ -40,7 +40,6 @@ public class MessageUtil {
 	public static final String ARSCDECODER_DECODE_SHARED         = "w";
 	public static final String ARSCDECODER_SPARSE_TYPE           = "x";
 	public static final String ARSCDECODER_DEFAULT_PACKAGE       = "y";
-	
 	public static final String COPY_FILE_WITH_METHOD             = "z";
 	public static final String AAPT2_COMPILE_RUN                 = "A";
 	public static final String AAPT2_LINK_RUN                    = "B";
@@ -48,24 +47,44 @@ public class MessageUtil {
 	public static final String SEVERE1                           = "D";
 	public static final String SEVERE2                           = "E";
 	public static final String SEVERE3                           = "F";
-	
+	public static final String COULD_NOT_FIND_SOURCE             = "G";
+	public static final String COULD_NOT_FIND_RESOURCE           = "H";
+	public static final String PATSE_MANIFEST_FAILED             = "I";
+	public static final String SKIP_PACKAGE_GROUP                = "J";
+	public static final String SET_DEFAULT_AAPT                  = "L";
+	public static final String EMPTY_FRAME_FAILED                = "M";
+	public static final String MORE_THAN_ONE_FRAME               = "N";
+	public static final String INVALID_ORIENTATION               = "O";
+	public static final String INVALID_TOUCHSCREEN               = "P";
+	public static final String INVALID_DENSITY                   = "Q";
+	public static final String INVALID_KEYBOARD                  = "R";
+	public static final String INVALID_NAVIGATION                = "S";
+	public static final String MULTIPLE_TYPE                     = "T";
+	public static final String REPORT_FIX                        = "U";
+	public static final String DECTED_UNKNOWN_DATA               = "V";
+	public static final String DECTED_INVALID_DATA               = "W";
+	public static final String INVALID_CONFIG                    = "X";
+	public static final String INVALID_CONFIG_DROP               = "Y";
+	public static final String DUPLICATE_RESOURCES               = "Z";
+	public static final String JAXP_1_5_NOT_SUPPORT              = "0";
+	public static final String UNKNOWN_TYPE                      = "01";
 
 	private static String getText(String id, Object... args) {
 		String text = rb.getString(id);
 		return MessageFormat.format(text, args);
 	}
-	public static void info(Logger logger, String id, Object... args){
+	public static void info(Logger logger, String id, Object... args) {
 		logger.info(getText(id, args));
 	}
 
-	public static void fine(Logger logger, String id, Object... args){
+	public static void fine(Logger logger, String id, Object... args) {
 		logger.fine(getText(id, args));
 	}
-	public static void warning(Logger logger, String id, Object... args){
+	public static void warning(Logger logger, String id, Object... args) {
 		logger.warning(getText(id, args));
 	}
 
-	public static void severe(Logger logger, String id, Object... args){
+	public static void severe(Logger logger, String id, Object... args) {
 		logger.severe(getText(id, args));
 	}
 	static{

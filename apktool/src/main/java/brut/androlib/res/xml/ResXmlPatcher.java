@@ -42,6 +42,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import brut.androlib.AndrolibException;
+import brut.androlib.MessageUtil;
 
 /**
  * @author Connor Tumbleson <connor.tumbleson@gmail.com>
@@ -303,7 +304,7 @@ public final class ResXmlPatcher {
             docFactory.setAttribute(ACCESS_EXTERNAL_DTD, " ");
             docFactory.setAttribute(ACCESS_EXTERNAL_SCHEMA, " ");
         } catch (IllegalArgumentException ex) {
-            LOGGER.warning("JAXP 1.5 Support is required to validate XML");
+            MessageUtil.warning(LOGGER, MessageUtil.JAXP_1_5_NOT_SUPPORT);
         }
 
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
