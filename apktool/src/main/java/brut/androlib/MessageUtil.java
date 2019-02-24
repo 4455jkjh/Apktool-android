@@ -45,6 +45,9 @@ public class MessageUtil {
 	public static final String AAPT2_COMPILE_RUN                 = "A";
 	public static final String AAPT2_LINK_RUN                    = "B";
 	public static final String AAPT_COMMAND_RUN                  = "C";
+	public static final String SEVERE1                           = "D";
+	public static final String SEVERE2                           = "E";
+	public static final String SEVERE3                           = "F";
 	
 
 	private static String getText(String id, Object... args) {

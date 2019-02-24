@@ -24,7 +24,7 @@ public class Messages extends ListResourceBundle {
 		{MessageUtil.ANDROLIB_COPY_UNKNOWN_FILES_DIR,     "Copying unknown files/dir..."},
 		{MessageUtil.ANDROLIB_BUILD_APK,                  "Building apk file..."},
 		{MessageUtil.APKDECODER_SHOW_VERSION,             "Using Apktool {0} on {1}"},
-		
+
 		{MessageUtil.ANDROLIBRESOURCES_LOAD_TABLE,        "Loading resource table..."},
 		{MessageUtil.ANDROLIBRESOURCES_LOAD_TABLE_FROM,   "Loading resource table from file: {0}"},
 		{MessageUtil.ANDROLIBRESOURCES_DECODE_MANIFEST,   "Decoding AndroidManifest.xml with only framework resources..."},
@@ -35,15 +35,19 @@ public class Messages extends ListResourceBundle {
 		{MessageUtil.ANDROLIBRESOURCES_DECODE_VALUES,     "Decoding values */* XMLs..."},
 		{MessageUtil.ANDROLIBRESOURCES_REMOVE_APK,        "Removing {0} framework file..."},
 		{MessageUtil.ANDROLIBRESOURCES_INSTALL_FRAME,     "Framework installed to: {0}"},
-		
+
 		{MessageUtil.ARSCDECODER_DECODE_SHARED,           "Decoding Shared Library ({0}), pkgId: {1}"},
 		{MessageUtil.ARSCDECODER_SPARSE_TYPE,             "Sparse type flags detected: {0}"},
 		{MessageUtil.ARSCDECODER_DEFAULT_PACKAGE,         "Arsc file contains multiple packages. Using package {0} as default."},
-		
+
 		{MessageUtil.COPY_FILE_WITH_METHOD,               "Copying unknown file {0} with method {1}"},
 		{MessageUtil.AAPT2_COMPILE_RUN,                   "aapt2 compile command ran: "},
 		{MessageUtil.AAPT2_LINK_RUN,                      "aapt2 link command ran: "},
-		{MessageUtil.AAPT_COMMAND_RUN,                    "command ran: "}
+		{MessageUtil.AAPT_COMMAND_RUN,                    "command ran: "},
+
+		{MessageUtil.SEVERE1,                             "WARNING: Could not write to ({0}), using {1} instead..."},
+		{MessageUtil.SEVERE2,                             "Please be aware this is a volatile directory and frameworks could go missing, please utilize --frame-path if the default storage directory is unavailable"},
+		{MessageUtil.SEVERE3,                             "Can't create Framework directory: {0}"}
 	};
 
 	@Override

@@ -953,10 +953,8 @@ final public class AndrolibResources {
             File fullPath = new File(path);
 
             if (! fullPath.canWrite()) {
-                LOGGER.severe(String.format("WARNING: Could not write to (%1$s), using %2$s instead...",
-											fullPath.getAbsolutePath(), System.getProperty("java.io.tmpdir")));
-                LOGGER.severe("Please be aware this is a volatile directory and frameworks could go missing, " +
-							  "please utilize --frame-path if the default storage directory is unavailable");
+                MessageUtil.severe(LOGGER, MessageUtil.SEVERE1, fullPath.getAbsolutePath(), System.getProperty("java.io.tmpdir"));
+                MessageUtil.severe(LOGGER, MessageUtil.SEVERE2);
 
                 path = new File(System.getProperty("java.io.tmpdir")).getAbsolutePath();
             }
@@ -975,7 +973,7 @@ final public class AndrolibResources {
         if (! dir.exists()) {
             if (! dir.mkdirs()) {
                 if (apkOptions.frameworkFolderLocation != null) {
-                    LOGGER.severe("Can't create Framework directory: " + dir);
+                    MessageUtil.severe(LOGGER, MessageUtil.SEVERE3, dir);
                 }
                 throw new AndrolibException("Can't create directory: " + dir);
             }

@@ -34,7 +34,7 @@ import org.apache.commons.io.IOUtils;
 import org.jf.dexlib2.writer.builder.DexBuilder;
 import org.jf.dexlib2.Opcodes;
 import org.jf.dexlib2.iface.ClassDef;
-import com.a4455jkjh.smali.SmaliBuilder;
+import com.a4455jkjh.smali.ClassMaker;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -88,13 +88,13 @@ public class SmaliMod {
 
         SmaliParser parser = new SmaliParser(tokens);
 
-        SmaliParser.Smali_fileContext result = parser.smali_file();
+        SmaliParser.SmaliContext result = parser.smali();
 
         if (parser.getNumberOfSyntaxErrors() > 0) {
             return null;
         }
 
-        ClassDef cls = SmaliBuilder.build(result, tokens);
+        ClassDef cls = ClassMaker.make(result, tokens, opcodes);
 
         return cls;
     }
