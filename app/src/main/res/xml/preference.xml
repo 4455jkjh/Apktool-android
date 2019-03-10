@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<header
+		android:title="@string/application"
+		android:summary="@string/application_summary"
+		android:fragment="com.a4455jkjh.apktool.fragment.PreferenceApplicationFragment" />
+	<header
+		android:title="@string/editor"
+		android:summary="@string/editor_summary"
+		android:fragment="com.a4455jkjh.apktool.fragment.PreferenceEditorFragment" />
+	<header
+		android:title="@string/build_and_decode"
+		android:summary="@string/build_and_decode_summary"
+		android:fragment="com.a4455jkjh.apktool.fragment.PreferenceCompilerFragment" />
+	<header
+		android:title="@string/signature"
+		android:summary="@string/signature_summary"
+		android:fragment="com.a4455jkjh.apktool.fragment.PreferenceSignatureFragment" />
+	<header
+		android:title="@string/about"
+		android:fragment="com.a4455jkjh.apktool.fragment.HelpFragment" />
+</preference-headers>

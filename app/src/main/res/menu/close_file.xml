@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:id="@+id/close_cur"
+        android:title="@string/close_cur"/>
+	<item
+        android:id="@+id/close_others"
+        android:title="@string/close_others"/>
+	<item
+        android:id="@+id/close_all"
+        android:title="@string/close_all"/>
+    
+</menu>

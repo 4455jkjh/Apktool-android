@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+	<EditTextPreference
+        android:title="@string/output_directory"
+        android:key="output_directory"
+        android:summary="@string/output_directory_summary"/>
+	<CheckBoxPreference
+        android:title="@string/mBakdeb"
+        android:key="mBakdeb"
+        android:summary="@string/mBakdeb_summary"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:title="@string/debug_mode"
+        android:key="debug_mode"
+        android:summary="@string/debug_mode_summary"
+        android:defaultValue="false" />
+	<CheckBoxPreference
+        android:title="@string/verbose_mode"
+        android:key="verbose_mode"
+        android:summary="@string/verbose_mode_summary"
+        android:defaultValue="false" />
+	<CheckBoxPreference
+        android:title="@string/copyOriginalFiles"
+        android:key="copyOriginalFiles"
+        android:summary="@string/copyOriginalFiles_summary"
+        android:defaultValue="false" />
+	<CheckBoxPreference
+        android:title="@string/analysis_all_smali"
+        android:key="analysis_all_smali"
+        android:summary="@string/analysis_all_smali_summary"
+        android:defaultValue="false" />
+</PreferenceScreen>

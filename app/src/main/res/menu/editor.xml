@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<item
+        android:id="@+id/save"
+        android:title="@string/save"
+		android:showAsAction="always"/>
+	<item
+		android:id="@+id/undo"
+		android:title="@string/undo"
+		android:showAsAction="always"/>
+	<item
+		android:id="@+id/redo"
+		android:title="@string/redo"
+		android:showAsAction="always"/>
+	<item
+		android:id="@+id/find"
+		android:title="@string/find"
+		android:showAsAction="collapseActionView"
+		android:actionViewClass="android.widget.SearchView"/>
+	<item
+		android:id="@+id/go_to_line"
+		android:title="@string/go_to_line"
+		android:showAsAction="collapseActionView"
+		android:actionViewClass="android.widget.SearchView"/>
+	<item
+		android:id="@+id/edit_mode"
+		android:title="@string/edit_mode"/>
+	<item
+		android:id="@+id/translate"
+		android:title="@string/translate_java"/>
+	<item
+		android:id="@+id/format"
+		android:title="@string/format"/>
+    
+</menu>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.a4455jkjh.apktool">
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+	<application
+		android:name=".ApktoolApplication"
+		android:icon="@mipmap/apktool"
+		android:largeHeap="true"
+		android:label="@string/app_name"
+		android:theme="@style/AppThemeLight"
+		android:resizeableActivity="true">
+		<activity
+			android:name=".MainActivity"
+			android:launchMode="singleTask"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:label="@string/app_name"
+			android:windowSoftInputMode="adjustResize">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter> 
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+				<data
+					android:scheme="content"
+					android:mimeType="text/*"/>
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".SettingActivity"
+			android:label="@string/settings"/>
+		<service
+			android:name="com.a4455jkjh.apktool.service.SmaliAnalysisService"
+			android:process=":analysis"
+			android:label="@string/smali_snalysis"/>
+		<provider
+			android:name="com.a4455jkjh.apktool.FileProvider"
+			android:exported="false"
+			android:authorities="com.a4455jkjh.fileprovider"
+			android:grantUriPermissions="true"/>
+	</application>
+</manifest>
