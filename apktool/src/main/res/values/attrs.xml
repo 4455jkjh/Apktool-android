@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="color_app_background" format="reference" />
+    <attr name="files_back" format="reference" />
+	<declare-styleable name="TabItem">
+		<attr name="android:text"/>
+		<attr name="android:icon"/>
+		<attr name="android:layout"/>
+	</declare-styleable>
+	<declare-styleable name="TabTextAppearance">
+		<attr name="android:textSize"/>
+		<attr name="android:textColor"/>
+	</declare-styleable>
+	<declare-styleable name="TabLayout">
+		<attr
+            format="color"
+            name="tabIndicatorColor"/>
+		<attr
+            format="dimension"
+            name="tabIndicatorHeight"/>
+		<attr
+            format="dimension"
+            name="tabContentStart"/>
+		<attr
+            format="reference"
+            name="tabBackground"/>
+		<attr name="tabMode">
+            <enum
+                name="scrollable"
+                value="0"/>
+            <enum
+                name="fixed"
+                value="1"/>
+        </attr>
+		<attr name="tabGravity">
+            <enum
+                name="fill"
+                value="0"/>
+            <enum
+                name="center"
+                value="1"/>
+        </attr>
+		<attr
+            format="dimension"
+            name="tabMinWidth"/>
+		<attr
+            format="dimension"
+            name="tabMaxWidth"/>
+		<attr
+            format="reference"
+            name="tabTextAppearance"/>
+		<attr
+            format="color"
+            name="tabTextColor"/>
+		<attr
+            format="color"
+            name="tabSelectedTextColor"/>
+		<attr
+            format="dimension"
+            name="tabPaddingStart"/>
+		<attr
+            format="dimension"
+            name="tabPaddingTop"/>
+		<attr
+            format="dimension"
+            name="tabPaddingEnd"/>
+		<attr
+            format="dimension"
+            name="tabPaddingBottom"/>
+		<attr
+            format="dimension"
+            name="tabPadding"/>
+	</declare-styleable>
+</resources>

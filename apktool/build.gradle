@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.0"
+
+    defaultConfig {
+        applicationId "com.a4455jkjh.apktool"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1903280240
+        versionName "2.4.0-190328"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+	compile 'androidx.drawerlayout:drawerlayout:1.0.0+'
+	compile 'androidx.viewpager:viewpager:1.0.0+'
+	compile 'androidx.interpolator:interpolator:1.0.0'
+	compile 'androidx.fragment:fragment:1.0.0'l
+}
+

@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+		android:icon="?attr/files_back"
+        android:id="@+id/go_back"
+        android:title="@string/go_back"/>
+    <item
+        android:id="@+id/sort"
+        android:title="@string/sort"/>
+	<item
+        android:id="@+id/new_file"
+        android:title="@string/new_file"/>
+	<item
+        android:id="@+id/new_dir"
+        android:title="@string/new_dir"/>
+	<item
+        android:id="@+id/main_project"
+        android:title="@string/main_project"/>
+	<item
+        android:id="@+id/set_as_output_directory"
+        android:title="@string/set_as_output_directory"/>
+</menu>

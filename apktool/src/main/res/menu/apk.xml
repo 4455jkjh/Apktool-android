@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item
+        android:id="@+id/decompile_all"
+        android:title="@string/decompile_all"/>
+    <item
+        android:id="@+id/decompile_res"
+        android:title="@string/decompile_res"/>
+    <item
+        android:id="@+id/decompile_dex"
+        android:title="@string/decompile_dex"/>
+    <item
+        android:id="@+id/translate"
+        android:title="@string/translate"/>
+    <item
+        android:id="@+id/sign"
+        android:title="@string/sign"/>
+    <item
+        android:id="@+id/verify"
+        android:title="@string/verify"/>
+    <item
+        android:id="@+id/install"
+        android:title="@string/install"/>
+    <item
+        android:id="@+id/import_framework"
+        android:title="@string/import_framework"/>
+</menu>

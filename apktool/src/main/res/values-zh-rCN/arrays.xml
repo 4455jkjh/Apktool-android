@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort">
+        <item>文件名</item>
+        <item>文件名（倒序）</item>
+        <item>文件类型</item>
+        <item>文件类型（倒序）</item>
+        <item>文件大小</item>
+        <item>文件大小（倒序）</item>
+        <item>修改时间</item>
+        <item>修改时间（倒序）</item>
+    </string-array>
+</resources>

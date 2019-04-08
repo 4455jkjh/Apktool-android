@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="AppTheme" parent="@android:style/Theme.Holo">
+        <item name="color_app_background">@color/app_background</item>
+        <item name="files_back">@drawable/undo_dark_menu</item>
+	</style>
+	<style name="AppThemeLight" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowBackground">@color/app_background_light</item>
+        <item name="color_app_background">@color/app_background_light</item>
+        <item name="files_back">@drawable/undo_menu</item>
+	</style>
+	<style
+        name="Base.Widget.Design.TabLayout"
+        parent="android:Widget">
+        <item name="tabMaxWidth">264dp</item>
+        <item name="tabIndicatorColor">@color/accent_material_light</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">?android:attr/windowBackground</item>
+        <item name="tabTextAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style
+        name="Widget.Design.TabLayout"
+        parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+    </style>
+  
+</resources>

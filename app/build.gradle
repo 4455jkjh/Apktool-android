@@ -8,8 +8,8 @@ android {
         applicationId "com.a4455jkjh.apktool"
         minSdkVersion 14
         targetSdkVersion 28
-        versionCode 1901300240
-        versionName "2.4.0-190130"
+        versionCode 1903100240
+        versionName "2.4.0-190310"
     }
     buildTypes {
         release {

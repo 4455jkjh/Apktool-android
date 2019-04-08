@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical">
+
+		<ImageView
+			android:src="?attr/files_back"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:layout_margin="3dp"
+			android:id="@+id/back"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:id="@+id/path"/>
+
+	</LinearLayout>
+
+	<View
+		android:background="?android:attr/dividerVertical"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"/>
+
+	<ListView
+		android:fastScrollEnabled="true"
+		android:layout_width="match_parent"
+		android:divider="@null"
+		android:layout_height="match_parent"
+		android:id="@+id/files"/>
+
+</LinearLayout>
+

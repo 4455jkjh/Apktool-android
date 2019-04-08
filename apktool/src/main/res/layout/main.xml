@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/drawer">
+
+	<FrameLayout
+		android:background="?attr/color_app_background"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:id="@+id/editor"/>
+
+	<FrameLayout
+		android:layout_gravity="left"
+		android:background="?android:attr/windowBackground"
+		android:layout_height="match_parent"
+		android:layout_width="320dp"
+		android:id="@+id/leftView"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

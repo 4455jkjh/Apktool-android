@@ -154,7 +154,11 @@ doubleLiteral
   ;
 
 arrayLiteral
-  : '{' literal ( ',' literal )* '}'
+  : '{' arrayMember? '}'
+  ;
+
+arrayMember
+  : literal ( ',' literal )*
   ;
 
 typeLiteral
