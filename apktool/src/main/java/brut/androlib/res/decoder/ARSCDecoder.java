@@ -365,7 +365,7 @@ public class ARSCDecoder {
             }
         }
 
-        return factory.bagFactory(parent, items);
+        return factory.bagFactory(parent, items, mTypeSpec);
     }
 
     private ResIntBasedValue readValue() throws IOException, AndrolibException {

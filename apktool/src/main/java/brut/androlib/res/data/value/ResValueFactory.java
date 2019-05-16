@@ -21,6 +21,7 @@ import brut.androlib.AndrolibException;
 import brut.androlib.res.data.ResPackage;
 import brut.util.Duo;
 import brut.util.Logger;
+import brut.androlib.res.data.ResTypeSpec;
 
 /**
  * @author Ryszard Wiśniewski <brut.alll@gmail.com>
@@ -86,7 +87,7 @@ public class ResValueFactory {
         return new ResStringValue(value, rawValue);
     }
 
-    public ResBagValue bagFactory(int parent, Duo<Integer, ResScalarValue>[] items) throws AndrolibException {
+    public ResBagValue bagFactory(int parent, Duo<Integer, ResScalarValue>[] items, ResTypeSpec resTypeSpec) throws AndrolibException {
         ResReferenceValue parentVal = newReference(parent, null);
 
         if (items.length == 0) {
@@ -97,13 +98,18 @@ public class ResValueFactory {
             return ResAttr.factory(parentVal, items, this, mPackage, logger);
         }
         // Android O Preview added an unknown enum for ResTable_map. This is hardcoded as 0 for now.
-        if (key == ResArrayValue.BAG_KEY_ARRAY_START || key == 0) {
+		String resTypeName = resTypeSpec.getName();
+        if (resTypeName.equals(ResTypeSpec.RES_TYPE_NAME_ARRAY) ||
+			key == ResArrayValue.BAG_KEY_ARRAY_START || key == 0) {
             return new ResArrayValue(parentVal, items, logger);
         }
-        if (key >= ResPluralsValue.BAG_KEY_PLURALS_START && key <= ResPluralsValue.BAG_KEY_PLURALS_END) {
+        if (resTypeName.equals(ResTypeSpec.RES_TYPE_NAME_PLURALS) ||
+			key >= ResPluralsValue.BAG_KEY_PLURALS_START && key <= ResPluralsValue.BAG_KEY_PLURALS_END) {
             return new ResPluralsValue(parentVal, items, logger);
         }
-        return new ResStyleValue(parentVal, items, this, logger);
+		if (resTypeName.equals(ResTypeSpec.RES_TYPE_NAME_STYLES))
+			return new ResStyleValue(parentVal, items, this, logger);
+		throw new AndrolibException("unsupported res type name for bags. Found: " + resTypeName);
     }
 
     public ResReferenceValue newReference(int resID, String rawValue) {

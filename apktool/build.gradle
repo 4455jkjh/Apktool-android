@@ -24,6 +24,6 @@ dependencies {
 	compile 'androidx.drawerlayout:drawerlayout:1.0.0+'
 	compile 'androidx.viewpager:viewpager:1.0.0+'
 	compile 'androidx.interpolator:interpolator:1.0.0'
-	compile 'androidx.fragment:fragment:1.0.0'l
-}
+	compile 'androidx.fragment:fragment:1.0.0'
+} 
 
